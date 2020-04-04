@@ -45,8 +45,11 @@
       Price Range
     </span>
     <div class="d-flex justify-space-between">
-      <span>{{ range[0] | priceIdr }}</span>
-      <span>{{ range[1] | priceIdr }}</span>
+      <div class="price">{{ range[0] | priceIdr }}</div>
+      <v-divider class="mt-5" />
+      <div class="price">
+        {{ range[1] | priceIdr }}
+      </div>
     </div>
     <v-range-slider
       v-model="range"
@@ -113,5 +116,12 @@ export default {
   .v-label {
     font-size: 13px !important;
   }
+}
+
+.price {
+  padding: 4px;
+  border: 1px solid #8e8e8e;
+  border-radius: 8px;
+  min-width: 125px;
 }
 </style>
